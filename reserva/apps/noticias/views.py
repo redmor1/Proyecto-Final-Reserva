@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -18,7 +20,14 @@ def servicios(request):
     return render(request, 'servicios.html')
 
 def contacto(request):
-    return render(request, 'contacto.html')
+    if request.method == 'POST':
+        form = ContactoForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('contacto')
+    else:
+        form = ContactoForm()
+    return render(request, 'contacto.html', {'form': form})
 
 def crear_post(request):
     return render(request, 'crear_post.html')
