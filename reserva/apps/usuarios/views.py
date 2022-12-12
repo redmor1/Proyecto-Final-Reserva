@@ -8,8 +8,8 @@ def registro(request):
         form = UsuarioRegistroForm(request.POST or None)
         if form.is_valid():
             form.save()
-            # messages.success(request, f'Cuenta creada por {username}!')
-            return redirect('index')
+            messages.success(request, 'Tu cuenta ha sido creada, ahora puedes logearte!')
+            return redirect('login')
     else:
         form = UsuarioRegistroForm()
     return render(request, 'usuarios/registro.html', {'form': form})
