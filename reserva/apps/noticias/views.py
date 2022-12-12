@@ -32,11 +32,5 @@ def contacto(request):
 def crear_post(request):
     return render(request, 'crear_post.html')
 
-def login(request):
-    return render(request, 'login.html')
-
-def registro(request):
-    return render(request, 'registro.html')
-
 def publicaciones(request):
     return render(request, 'publicaciones.html')
