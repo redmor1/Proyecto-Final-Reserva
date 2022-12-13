@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.noticias',
     'apps.usuarios',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'index'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

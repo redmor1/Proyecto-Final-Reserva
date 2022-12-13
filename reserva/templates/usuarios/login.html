@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 
 {% block content %}
@@ -9,13 +10,18 @@
         </div>
         <form method="POST" class="mt-5">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
 
 
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Iniciar Sesion</button>
             </div>
         </form>
+        <div>
+            <small class="text-muted">
+              No tienes una cuenta? <a href="{% url 'login' %}">Registrarse</a>
+            </small>
+        </div>
     </div>
 
 
