@@ -1,6 +1,39 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
+
+<section class="wf100 p80 blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6"> 
+          <!--INICIO Blog Posts-->
+          <div class="blog-posts"> 
+            <!--INICIO Blog Post-->
+            <div class="blog-post my-5">
+              <div class="blog-image"><img src="{% static 'img/examples/example1.jpeg' %}" alt="">
+            </div>
+              <div class="blog-title">
+                <h3><a href="#">Lorem ipsum dolor sit amet.</a></h3>
+                <ul class="post-meta">
+                  <li> <a href="#"><i class="fas fa-user-circle"></i> John Doe</a> </li>
+                  <li> <a href="#"><i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</a> </li>
+                  <li> <a href="#"><i class="fas fa-comments"></i> 10 Comentarios </a> </li>
+                  <li class="post-tags"><i class="fas fa-tags"></i> <a href="#">Plantas</a>
+                </ul>
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi culpa doloremque quisquam eos quod unde distinctio quis quaerat commodi? </p>
+                <a href="#" class="btn btn-round bg-primary text-white">Ver mas</a> </div>
+            </div>
+            <!--FIN Blog Post--> 
+ 
+
+          </div>
+          <!--FIN Blog Posts--> 
+
+        </div>
+      </div>
+    </div>
+  </section>
 
 {% endblock %}
