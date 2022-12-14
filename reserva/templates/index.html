@@ -2,38 +2,114 @@
 {% load static %}
 
 
+
 {% block content %}
 
 <section class="wf100 p80 blog">
     <div class="container">
       <div class="row">
-        <div class="col-md-6"> 
+        <div class="col-md-6 ml-auto"> 
           <!--INICIO Blog Posts-->
           <div class="blog-posts"> 
             <!--INICIO Blog Post-->
-            <div class="blog-post my-5">
-              <div class="blog-image"><img src="{% static 'img/examples/example1.jpeg' %}" alt="">
+            <div class="blog-post my-5 py-4">
+              <div class="blog-image rounded"><img src="{% static 'img/examples/example1.jpeg' %}" alt="">
             </div>
-              <div class="blog-title">
-                <h3><a href="#">Lorem ipsum dolor sit amet.</a></h3>
+            <div class="blog-text">
+                <div class="blog-title my-2">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                </div>
                 <ul class="post-meta">
-                  <li> <a href="#"><i class="fas fa-user-circle"></i> John Doe</a> </li>
-                  <li> <a href="#"><i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</a> </li>
-                  <li> <a href="#"><i class="fas fa-comments"></i> 10 Comentarios </a> </li>
+                  <li class="mr-3"> <a href="#"><i class="fas fa-user-circle"></i> John Doe</a> </li>
+                  <li class="mr-3"> <a href="#"><i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</a> </li>
+                  <li class="mr-3"> <a href="#"><i class="fas fa-comments"></i> 10 Comentarios </a> </li>
                   <li class="post-tags"><i class="fas fa-tags"></i> <a href="#">Plantas</a>
                 </ul>
                 <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi culpa doloremque quisquam eos quod unde distinctio quis quaerat commodi? </p>
-                <a href="#" class="btn btn-round bg-primary text-white">Ver mas</a> </div>
+                <a href="#" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
             </div>
-            <!--FIN Blog Post--> 
+            <!--FIN Blog Post-->
+            <!--INICIO Blog Post-->
+            <div class="blog-post my-5 py-4">
+                <div class="blog-image rounded"><img src="{% static 'img/examples/example1.jpeg' %}" alt="">
+              </div>
+              <div class="blog-text">
+                  <div class="blog-title my-2">
+                      <h2>Lorem ipsum dolor sit amet.</h2>
+                  </div>
+                  <ul class="post-meta">
+                    <li class="mr-3"> <a href="#"><i class="fas fa-user-circle"></i> John Doe</a> </li>
+                    <li class="mr-3"> <a href="#"><i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</a> </li>
+                    <li class="mr-3"> <a href="#"><i class="fas fa-comments"></i> 10 Comentarios </a> </li>
+                    <li class="post-tags"><i class="fas fa-tags"></i> <a href="#">Plantas</a>
+                  </ul>
+                  <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi culpa doloremque quisquam eos quod unde distinctio quis quaerat commodi? </p>
+                  <a href="#" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
+              </div>
+              <!--FIN Blog Post-->
+            <!--INICIO Blog Post-->
+            <div class="blog-post my-5 py-4">
+                <div class="blog-image rounded"><img src="{% static 'img/examples/example1.jpeg' %}" alt="">
+              </div>
+              <div class="blog-text">
+                  <div class="blog-title my-2">
+                      <h2>Lorem ipsum dolor sit amet.</h2>
+                  </div>
+                  <ul class="post-meta">
+                    <li class="mr-3"> <a href="#"><i class="fas fa-user-circle"></i> John Doe</a> </li>
+                    <li class="mr-3"> <a href="#"><i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</a> </li>
+                    <li class="mr-3"> <a href="#"><i class="fas fa-comments"></i> 10 Comentarios </a> </li>
+                    <li class="post-tags"><i class="fas fa-tags"></i> <a href="#">Plantas</a>
+                  </ul>
+                  <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi culpa doloremque quisquam eos quod unde distinctio quis quaerat commodi? </p>
+                  <a href="#" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
+              </div>
+              <!--FIN Blog Post-->
+            
+
  
 
           </div>
           <!--FIN Blog Posts--> 
 
         </div>
+
+        <div class="col-md-4 ml-auto bg-light">
+            <div class="sidebar-box pt-md-4 px-4 pb-5">
+              <form action="#" class="search-form">
+                <div class="form-group px-0">
+                  <span class="icon icon-search"></span>
+                  <input type="text" class="form-control" placeholder="Escribi una palabra y apreta enter">
+                </div>
+              </form>
+            </div>
+            <div class="sidebar-box px-4 pb-5">
+                <h3 class="sidebar-heading mb-4">Categorias</h3>
+              <ul class="categories list-unstyled">
+                <li class="border-bottom pb-2 mb-2"><a href="#">Animales</a></li>
+                <li class="border-bottom pb-2 mb-2"><a href="#">Vegetacion</a></li>
+                <li class="border-bottom pb-2 mb-2"><a href="#">Fungi</a></li>
+                <li class="border-bottom pb-2 mb-2"><a href="#">Ambiente</a></li>
+                <li class="border-bottom pb-2 mb-2"><a href="#">Fauna</a></li>
+              </ul>
+            </div>
+
+
+
+
+            <div class="sidebar-box px-4 pb-5">
+              <h3 class="sidebar-heading mb-4">Paragraph</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut.</p>
+            </div>
+          </div>
+
+        
       </div>
     </div>
   </section>
+
+  
+
+
 
 {% endblock %}
