@@ -46,3 +46,11 @@ ul.post-meta li {
     color: #888888;
 
 }
+
+
+.sidebar-image {
+    width:100%;
+    height:auto;
+    overflow:hidden
+
+}
