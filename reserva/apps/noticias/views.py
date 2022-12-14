@@ -34,3 +34,6 @@ def crear_post(request):
 
 def publicaciones(request):
     return render(request, 'publicaciones.html')
+
+def post(request):
+    return render(request, 'post.html')

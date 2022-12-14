@@ -7,7 +7,7 @@
 
 <section class="wf100 p80 blog bg-light">
     <div class="container bg-light p-5">
-
+    {% block post %}
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class=""></li>
@@ -16,7 +16,7 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item">
-                <img class="first-slide w-100" src="{% static 'img/examples/product10.jpeg' %}" alt="First slide">
+                <img class="first-slide w-100 rounded" src="{% static 'img/examples/product10.jpeg' %}" alt="First slide">
                 <div class="container">
                   <div class="carousel-caption text-left">
                     <h1>Example headline.</h1>
@@ -26,7 +26,7 @@
                 </div>
               </div>
               <div class="carousel-item active">
-                <img class="second-slide w-100" src="{% static 'img/examples/product11.jpeg' %}" alt="Second slide">
+                <img class="second-slide w-100 rounded" src="{% static 'img/examples/product11.jpeg' %}" alt="Second slide">
                 <div class="container">
                   <div class="carousel-caption">
                     <h1>Another example headline.</h1>
@@ -36,7 +36,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img class="third-slide w-100" src="{% static 'img/examples/product12.jpeg' %}" alt="Third slide">
+                <img class="third-slide w-100 rounded" src="{% static 'img/examples/product12.jpeg' %}" alt="Third slide">
                 <div class="container">
                   <div class="carousel-caption text-right">
                     <h1>One more for good measure.</h1>
@@ -122,6 +122,8 @@
           <!--FIN Blog Posts--> 
 
         </div>
+
+        {% endblock post %}
 
         <div class="col-md-4 ml-auto bg-light py-5">
             <div class="sidebar-box pt-md-4 px-4 pb-5">
