@@ -5,22 +5,27 @@
 {% block content %}
 
     <div class="container py-5">
-        <div class="page-header">
-            <h1 class="page-title">Iniciar Sesion</h1>
-        </div>
-        <form method="POST" class="mt-5">
-            {% csrf_token %}
-            {{ form|crispy }}
+        <div class="row">
+            
+            <div class="col-lg-8 mx-auto">
+                <div class="page-header">
+                    <h1 class="page-title">Iniciar Sesion</h1>
+                </div>
+                <form method="POST" class="mt-5">
+                    {% csrf_token %}
+                    {{ form|crispy }}
 
 
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Iniciar Sesion</button>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Iniciar Sesion</button>
+                    </div>
+                </form>
+                <div>
+                    <small class="text-muted">
+                    No tienes una cuenta? <a href="{% url 'login' %}">Registrarse</a>
+                    </small>
+                </div>
             </div>
-        </form>
-        <div>
-            <small class="text-muted">
-              No tienes una cuenta? <a href="{% url 'login' %}">Registrarse</a>
-            </small>
         </div>
     </div>
 
