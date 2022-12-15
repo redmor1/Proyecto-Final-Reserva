@@ -1,6 +1,115 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
+<section class="projects">
+    <div class="projects-list">
+       <div class="container py-5">
+          <div class="row">
+             <div class="ml-auto mr-auto col-lg-8 col-md-8 col-sm-8 mt-3">
+                <!--Project Box Start-->
+                <div class="pro-list-box d-flex w-100 mb-5 pb-5">
+                   <div class="pro-thumb w-100 pr-4 h-100"><img class="project-image rounded w-100" src="{% static 'img/examples/example2.jpeg' %}" alt=""> </div>
+                   <div class="pro-txt w-100 my-auto">
+                      <h1 class="fw-bold"> <a href="#">Perforacion para extraer agua y generar riego de una huerta agroecologica</a> </h1>
+                      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum officia error deleniti placeat quasi nostrum minus, et iure dicta. Asperiores?</p>
+                      <a href="#" class="view btn btn-rounded btn-success">Ver detalles</a> 
+                   </div>
+                </div>
+                <!--Project Box End-->
+                <!--Project Box Start-->
+                <div class="pro-list-box d-flex w-100 mb-5 pb-5">
+                    <div class="pro-thumb w-100 pr-4"><img class="project-image rounded w-100 h-auto" src="{% static 'img/examples/example4.jpeg' %}" alt=""> </div>
+                    <div class="pro-txt w-100 my-auto">
+                       <h1 class="fw-bold"> <a href="#">Perforacion para extraer agua y generar riego de una huerta agroecologica</a> </h1>
+                       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum officia error deleniti placeat quasi nostrum minus, et iure dicta. Asperiores?</p>
+                       <a href="#" class="view btn btn-rounded btn-success">Ver detalles</a> 
+                    </div>
+                 </div>
+                 <!--Project Box End-->
+                 <div class="pro-list-box d-flex w-100 mb-5 pb-5">
+                    <div class="pro-thumb w-100 pr-4"><img class="project-image rounded w-100 h-auto" src="{% static 'img/examples/example5.jpeg' %}" alt=""> </div>
+                    <div class="pro-txt w-100 my-auto">
+                       <h1 class="fw-bold"> <a href="#">Perforacion para extraer agua y generar riego de una huerta agroecologica</a> </h1>
+                       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum officia error deleniti placeat quasi nostrum minus, et iure dicta. Asperiores?</p>
+                       <a href="#" class="view btn btn-rounded btn-success">Ver detalles</a> 
+                    </div>
+                 </div>
+                 <!--Project Box End-->
+                 <div class="pro-list-box d-flex w-100 mb-5 pb-5">
+                    <div class="pro-thumb w-100 pr-4"><img class="project-image rounded w-100 h-auto" src="{% static 'img/examples/example6.jpeg' %}" alt=""> </div>
+                    <div class="pro-txt w-100 my-auto">
+                       <h1 class="fw-bold"> <a href="#">Perforacion para extraer agua y generar riego de una huerta agroecologica</a> </h1>
+                       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum officia error deleniti placeat quasi nostrum minus, et iure dicta. Asperiores?</p>
+                       <a href="#" class="view btn btn-rounded btn-success">Ver detalles</a> 
+                    </div>
+                 </div>
+                 <!--Project Box End-->
+            
+               
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-4 bg-light py-5 ml-auto">
+                <div class="sidebar-box pt-md-4 px-4 pb-5">
+                  <form action="#" class="search-form">
+                    <div class="form-group px-0">
+                      <span class="icon icon-search"></span>
+                      <input type="text" class="form-control" placeholder="Escribi una palabra y apreta enter">
+                    </div>
+                  </form>
+                </div>
+                <div class="sidebar-box px-4 pb-5">
+                    <h3 class="sidebar-heading mb-4 fw-bold">Categorias</h3>
+                  <ul class="categories list-unstyled">
+                    <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Animales</a></li>
+                    <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Vegetacion</a></li>
+                    <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Fungi</a></li>
+                    <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Ambiente</a></li>
+                    <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Fauna</a></li>
+                  </ul>
+                </div>
+    
+    
+    
+    
+                <div class="sidebar-box px-4 pb-5">
+                  <h3 class="sidebar-heading mb-4 fw-bold">Ultimas imagenes</h3>
+                  <div class="py-2 d-flex">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example5.jpeg' %}">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example6.jpeg' %}">
+                  </div>
+                  <div class="py-2 d-flex">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example7.jpeg' %}">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example8.jpeg' %}">
+                  </div>
+                  <div class="py-2 d-flex">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example9.jpeg' %}">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example10.jpeg' %}">
+                  </div>
+                  <div class="py-2 d-flex">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example11.jpeg' %}">
+                    <img class="sidebar-image m-1 rounded" src="{% static 'img/examples/example12.jpeg' %}">
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+             <div class="col-md-12">
+                <div class="gt-pagination mt20">
+                   <nav>
+                      <ul class="pagination">
+                         <li class="page-item"> <a class="page-link" href="#" aria-label="Previous"> <i class="fas fa-angle-left"></i> </a> </li>
+                         <li class="page-item"><a class="page-link" href="#">1</a></li>
+                         <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                         <li class="page-item"><a class="page-link" href="#">3</a></li>
+                         <li class="page-item"> <a class="page-link" href="#" aria-label="Next"> <i class="fas fa-angle-right"></i> </a> </li>
+                      </ul>
+                   </nav>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
 
 {% endblock %}
