@@ -5,7 +5,8 @@ from django.forms.forms import Form
 from .models import *
 
 
-class ContactoForm(forms.ModelForm):
-    class Meta:
-        model = MensajesContacto
-        fields = ['nombre', 'email', 'asunto', 'mensaje']
+class ContactoForm(forms.Form):
+    email = forms.EmailField()
+    asunto = forms.CharField(max_length=150)
+    mensaje = forms.CharField(max_length=2000)
+
