@@ -63,6 +63,13 @@
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
             </form>
             <ul class="navbar-nav ml-2">
+
+                {% if request.user.is_authenticated and request.user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'crear_post' %}">Crear post</a>
+                    </li>
+                {% endif %}
+                
                 {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>

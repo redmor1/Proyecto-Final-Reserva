@@ -10,3 +10,8 @@ class ContactoForm(forms.Form):
     asunto = forms.CharField(max_length=150)
     mensaje = forms.CharField(max_length=2000)
 
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['titulo', 'resumen', 'texto', 'imagen', 'categoria']

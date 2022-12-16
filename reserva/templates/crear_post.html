@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 
 {% block content %}
+<div>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <h1 class="card-header text-center fw-bold">Crear post</h1>
+                    <div class="card-body">
+                        {{ post_form|crispy }}
+                        <button type="submit" class="btn btn-primary btn-round">Guardar</button>
+                        <a href="{% url 'crear_post' %}" class="btn btn-danger btn-round">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

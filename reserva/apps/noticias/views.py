@@ -3,12 +3,13 @@ from .models import *
 from .forms import *
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-fecha_creacion')
     context = {
         'posts': posts
     }
@@ -47,9 +48,19 @@ def contacto(request):
         form = ContactoForm()
         return render(request, "contacto.html", {'form':form}) 
 
-
+@login_required
 def crear_post(request):
-    return render(request, 'crear_post.html')
+    if not request.user.is_staff:
+        return redirect('index')
+
+    if request.method == 'POST':
+        post_form = PostForm(request.POST or None, request.FILES or None)
+        if post_form.is_valid():
+            post_form.save()
+            return redirect('crear_post')
+    else:
+        post_form = PostForm()
+    return render(request, 'crear_post.html', {'post_form': post_form})
 
 def publicaciones(request):
     return render(request, 'publicaciones.html')
