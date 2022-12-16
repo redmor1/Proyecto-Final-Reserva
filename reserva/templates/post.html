@@ -8,27 +8,23 @@
       <!--INICIO Blog Posts-->
       <div class="blog-posts"> 
         <!--INICIO Blog Post-->
-        <div class="blog-post my-5 py-4">
-          <div class="blog-image rounded"><img src="{% static 'img/examples/example3.jpeg' %}" alt="">
-        </div>
-        <div class="blog-text">
-            <div class="blog-title my-2">
-                <h1 class="fw-bold h1">Lorem ipsum dolor sit amet.</h1>
-            </div>
-            <ul class="post-meta">
-              <li class="mr-3"><i class="fas fa-user-circle"></i> John Doe </li>
-              <li class="mr-3"> <i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</li>
-              <li class="mr-3"> <i class="fas fa-comments"></i> 10 Comentarios </li>
-              <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
-            </ul>
-            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aliquid impedit blanditiis possimus minima dolore accusantium nemo ullam adipisci dolorum soluta incidunt veritatis provident neque atque quod, eaque nesciunt inventore odio sapiente dolorem vero totam! Unde fugiat error quibusdam commodi fugit pariatur illo dignissimos, laborum officia vel eaque id. Incidunt.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe hic eaque repellat, soluta aut commodi minima provident earum suscipit porro maiores blanditiis ratione expedita eveniet ad asperiores deleniti voluptas tempore! Vitae eveniet distinctio facere at labore earum voluptas! Nemo, voluptate. Repellendus sed ratione, blanditiis cum nemo iure obcaecati dolorem eaque corrupti cumque explicabo quae natus, necessitatibus, magni ea inventore illo laudantium voluptate impedit beatae! Libero delectus quidem ratione officia cum dicta accusamus repudiandae velit eum, odit eius fugiat, totam ullam veritatis doloribus illum perferendis maiores explicabo. Voluptatem inventore at illo, impedit in, unde laudantium provident possimus harum deserunt, delectus suscipit.</p>
-            </div>
-        </div>
+          <div class="blog-post my-5 py-4">
+            <div class="blog-image rounded"><img src="media/{{post.imagen}}" alt="">
+          </div>
+          <div class="blog-text">
+              <div class="blog-title my-2">
+                  <h1 class="fw-bold h1">{{ post.titulo }}</h1>
+              </div>
+              <ul class="post-meta">
+                <li class="mr-3"><i class="fas fa-user-circle"></i>Admin</li>
+                <li class="mr-3"> <i class="fas fa-calendar-alt"></i>{{ post.fecha_creacion }}</li>
+                <li class="mr-3"> <i class="fas fa-comments"></i> 10 Comentarios </li>
+                <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
+              </ul>
+              <p class="mt-4">{{ post.texto }}</p>
+              </div>
+          </div>
         <!--FIN Blog Post-->
-
-        
-
 
 
       </div>

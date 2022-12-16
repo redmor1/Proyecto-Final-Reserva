@@ -76,7 +76,7 @@
                     <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
                   </ul>
                   <p>{{ post.resumen }}</p>
-                  <a href="{% url 'post' %}" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
+                  <a href="{% url 'post' post.id %}" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
               </div>
             {% endfor %}
             <!--FIN Blog Post-->

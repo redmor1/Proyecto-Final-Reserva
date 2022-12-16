@@ -54,6 +54,10 @@ def crear_post(request):
 def publicaciones(request):
     return render(request, 'publicaciones.html')
 
-def post(request):
-    return render(request, 'post.html')
-
+def leerPost(request, id):
+    if request.method == 'GET':
+        post = Post.objects.get(id=id)
+        context = {
+            'post': post
+        }
+    return render(request, 'post.html', context)

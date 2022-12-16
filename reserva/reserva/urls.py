@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.urls import path
+from django.urls import path, re_path
 from apps.noticias.views import *
 from apps.usuarios.views import registro, login
 from django.conf import settings
@@ -35,7 +35,7 @@ urlpatterns = [
     path('usuarios/logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name='logout'),
     path('usuarios/registro/', registro, name='registro'),
     path('publicaciones/', publicaciones, name='publicaciones'),
-    path('post/', post, name='post')
+    re_path('leer_post/(?P<id>\d+)/$', leerPost, name='post'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
