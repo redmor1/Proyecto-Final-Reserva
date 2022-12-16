@@ -61,62 +61,26 @@
           <!--INICIO Blog Posts-->
           <div class="blog-posts"> 
             <!--INICIO Blog Post-->
-            <div class="blog-post my-5 py-4">
-              <div class="blog-image rounded"><img src="{% static 'img/examples/example1.jpeg' %}" alt="">
-            </div>
-            <div class="blog-text">
-                <div class="blog-title my-2">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
-                </div>
-                <ul class="post-meta">
-                  <li class="mr-3"><i class="fas fa-user-circle"></i> John Doe </li>
-                  <li class="mr-3"> <i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</li>
-                  <li class="mr-3"> <i class="fas fa-comments"></i> 10 Comentarios </li>
-                  <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
-                </ul>
-                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi culpa doloremque quisquam eos quod unde distinctio quis quaerat commodi? </p>
-                <a href="{% url 'post' %}" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
-            </div>
+            {% for post in posts %}
+              <div class="blog-post my-5 py-4">
+                <div class="blog-image rounded"><img src="media/{{post.imagen}}" alt="">
+              </div>
+              <div class="blog-text">
+                  <div class="blog-title my-2">
+                      <h2>{{ post.titulo }}</h2>
+                  </div>
+                  <ul class="post-meta">
+                    <li class="mr-3"><i class="fas fa-user-circle"></i> Admin </li>
+                    <li class="mr-3"> <i class="fas fa-calendar-alt"></i>{{ post.fecha_creacion }}</li>
+                    <li class="mr-3"> <i class="fas fa-comments"></i> 10 Comentarios </li>
+                    <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
+                  </ul>
+                  <p>{{ post.resumen }}</p>
+                  <a href="{% url 'post' %}" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
+              </div>
+            {% endfor %}
             <!--FIN Blog Post-->
-            <!--INICIO Blog Post-->
-            <div class="blog-post my-5 py-4">
-                <div class="blog-image rounded"><img src="{% static 'img/examples/example2.jpeg' %}" alt="">
-              </div>
-              <div class="blog-text">
-                  <div class="blog-title my-2">
-                      <h2>Lorem ipsum dolor sit amet.</h2>
-                  </div>
-                  <ul class="post-meta">
-                    <li class="mr-3"><i class="fas fa-user-circle"></i> John Doe </li>
-                    <li class="mr-3"> <i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</li>
-                    <li class="mr-3"> <i class="fas fa-comments"></i> 10 Comentarios </li>
-                    <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
-                  </ul>
-                  <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi culpa doloremque quisquam eos quod unde distinctio quis quaerat commodi? </p>
-                  <a href="{% url 'post' %}" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
-              </div>
-              <!--FIN Blog Post-->
-            <!--INICIO Blog Post-->
-            <div class="blog-post my-5 py-4">
-                <div class="blog-image rounded"><img src="{% static 'img/examples/example3.jpeg' %}" alt="">
-              </div>
-              <div class="blog-text">
-                  <div class="blog-title my-2">
-                      <h2>Lorem ipsum dolor sit amet.</h2>
-                  </div>
-                  <ul class="post-meta">
-                    <li class="mr-3"><i class="fas fa-user-circle"></i> John Doe </li>
-                    <li class="mr-3"> <i class="fas fa-calendar-alt"></i> 13 Diciembre, 2022</li>
-                    <li class="mr-3"> <i class="fas fa-comments"></i> 10 Comentarios </li>
-                    <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
-                  </ul>
-                  <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi culpa doloremque quisquam eos quod unde distinctio quis quaerat commodi? </p>
-                  <a href="{% url 'post' %}" class="btn btn-round bg-primary text-white mt-2">Ver mas</a> </div>
-              </div>
-              <!--FIN Blog Post-->
-            
 
- 
 
           </div>
           <!--FIN Blog Posts--> 
