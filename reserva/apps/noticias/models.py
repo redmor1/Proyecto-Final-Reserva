@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -25,7 +26,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=150, blank=False, null=False)
     imagen = models.ImageField(upload_to='post', null=True)
     resumen = models.TextField(max_length=350, blank=False, null=False)
-    texto = models.TextField(max_length=None, blank=False, null=False)
+    texto = RichTextField(blank=False, null=False)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     fecha_creacion = models.DateField(auto_now_add=True)
     comentarios_activados = models.BooleanField(default=True)

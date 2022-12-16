@@ -35,7 +35,7 @@ urlpatterns = [
     path('usuarios/logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name='logout'),
     path('usuarios/registro/', registro, name='registro'),
     path('publicaciones/', publicaciones, name='publicaciones'),
-    re_path('leer_post/(?P<id>\d+)/$', leerPost, name='post'),
+    re_path('leer_post/(?P<id>\d+)/$', leer_post, name='post'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

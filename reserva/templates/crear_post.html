@@ -12,6 +12,7 @@
                 <div class="card">
                     <h1 class="card-header text-center fw-bold">Crear post</h1>
                     <div class="card-body">
+                        {{ post_form.media }}
                         {{ post_form|crispy }}
                         <button type="submit" class="btn btn-primary btn-round">Guardar</button>
                         <a href="{% url 'crear_post' %}" class="btn btn-danger btn-round">Cancelar</a>

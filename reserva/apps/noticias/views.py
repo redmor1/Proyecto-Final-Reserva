@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from .models import *
 from .forms import *
 from django.core.mail import send_mail, BadHeaderError
@@ -65,7 +65,7 @@ def crear_post(request):
 def publicaciones(request):
     return render(request, 'publicaciones.html')
 
-def leerPost(request, id):
+def leer_post(request, id):
     if request.method == 'GET':
         post = Post.objects.get(id=id)
         context = {

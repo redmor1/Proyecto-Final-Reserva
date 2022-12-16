@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.noticias',
     'apps.usuarios',
     'crispy_forms',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+LOGIN_URL = '/usuarios/login'
 LOGIN_REDIRECT_URL = 'index'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -141,6 +142,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'aim191395@gmail.com'
-EMAIL_HOST_PASSWORD = '123456'
+EMAIL_HOST_PASSWORD = '12345'
 # en caso de prueba, agregar su propio gmail y conseguir
 # la api password
