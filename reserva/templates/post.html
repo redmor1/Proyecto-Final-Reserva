@@ -16,10 +16,10 @@
                   <h1 class="fw-bold h1">{{ post.titulo }}</h1>
               </div>
               <ul class="post-meta">
-                <li class="mr-3"><i class="fas fa-user-circle"></i>Admin</li>
-                <li class="mr-3"> <i class="fas fa-calendar-alt"></i>{{ post.fecha_creacion }}</li>
+                <li class="mr-3"><i class="fas fa-user-circle"></i> Admin</li>
+                <li class="mr-3"> <i class="fas fa-calendar-alt"></i> {{ post.fecha_creacion }}</li>
                 <li class="mr-3"> <i class="fas fa-comments"></i> 10 Comentarios </li>
-                <li class="post-tags"><i class="fas fa-tags"></i> Plantas </li>
+                <li class="post-tags"><i class="fas fa-tags"></i> {{ post.categoria }}</li>
               </ul>
               <p class="mt-4">{{ post.texto }}</p>
               </div>
