@@ -97,10 +97,12 @@ def leer_post(request, id):
         post = Post.objects.get(id=id)
         comentarios = Comentario.objects.filter(post__id=id)
         form = ComentarioForm()
+        imagen_url = post.imagen.url
         context = {
             'post': post,
             'comentarios': comentarios,
             'form': form,
+            'imagen_url': imagen_url
         }
         return render(request, 'post.html', context)
 
@@ -116,7 +118,7 @@ def leer_post(request, id):
             return redirect('post', id=id)
     else:
         form = ComentarioForm()
-    return render(request, 'post.html', {'form': form})
+    return render(request, 'post.html', {'form': form, 'imagen_url': imagen_url})
 
 
     
