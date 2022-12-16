@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block post %}
@@ -30,44 +31,42 @@
       </div>
       <!--FIN Blog Posts--> 
 
-      <div class="post-comments wf100">
-        <h4 class="mb-5">Comments on Post</h4>
-        <li class="comment list-unstyled border-bottom pr-5 pl-2 py-2">
+      <div class="post-comments">
+        <h2 class="mb-3">Comentarios</h2>
+        
+        <li class="comment list-unstyled border-top pr-5 pl-2 py-2">
             <!-- <div class="vcard bio">
               <img src="images/person_1.jpg" alt="Image placeholder">
             </div> -->
-            <div class="comment-body">
-              <h3 class="fw-bold">John Doe</h3>
-              <h5 class="meta text-muted">14 Diciembre, 2022 a las 8:21pm</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-              <!-- <p><a href="#" class="reply">Reply</a></p> -->
-            </div>
+            {% for comentario in comentarios %}
+              <div class="comment-body border-bottom my-5">
+                <h3 class="fw-bold">{{ comentario.usuario }}</h3>
+                <h5 class="meta text-muted">{{ comentario.fecha_creacion }}</h5>
+                <p>{{ comentario.contenido }}</p>
+                <!-- <p><a href="#" class="reply">Reply</a></p> -->
+              </div>
+            {% endfor %}
           </li>
-          <li class="comment list-unstyled border-bottom pr-5 pl-2 py-2">
-            <!-- <div class="vcard bio">
-              <img src="images/person_1.jpg" alt="Image placeholder">
-            </div> -->
-            <div class="comment-body">
-              <h3 class="fw-bold">John Doe</h3>
-              <h5 class="meta text-muted">14 Diciembre, 2022 a las 8:21pm</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-              <!-- <p><a href="#" class="reply">Reply</a></p> -->
-            </div>
-          </li>
-          <li class="comment list-unstyled border-bottom pr-5 pl-2 py-2">
-            <!-- <div class="vcard bio">
-              <img src="images/person_1.jpg" alt="Image placeholder">
-            </div> -->
-            <div class="comment-body">
-              <h3 class="fw-bold">John Doe</h3>
-              <h5 class="meta text-muted">14 Diciembre, 2022 a las 8:21pm</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-              <!-- <p><a href="#" class="reply">Reply</a></p> -->
-            </div>
-          </li>
+
+          {% if request.user.is_authenticated %}
+            <form method="POST">
+              {% csrf_token %}
+              <div>
+                {{ form|crispy }}
+              </div>
+              <button type="submit" class="btn rounded">Enviar</button>
+            </form>
+          {% endif %}
+
 
 
      </div>
+
+    </div>
+    
+
+    <div>
+
 
     </div>
 {% endblock %}

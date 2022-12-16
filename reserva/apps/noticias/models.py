@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -36,3 +37,17 @@ class Post(models.Model):
 
     def __str__(self):
         return str(self.titulo)
+
+
+class Comentario(models.Model):
+    id = models.AutoField(primary_key=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    contenido = models.TextField(max_length=400, blank=False, null=False)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'Comentarios'
+
+    # def __str__(self, usuario, post):
+    #     return str(f'Usuario:"{usuario}" en Post:{post}')

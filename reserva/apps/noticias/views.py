@@ -5,6 +5,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -91,10 +92,36 @@ def publicaciones(request):
     return render(request, 'publicaciones.html')
 
 def leer_post(request, id):
+
     if request.method == 'GET':
         post = Post.objects.get(id=id)
+        comentarios = Comentario.objects.filter(post__id=id)
+        form = ComentarioForm()
         context = {
-            'post': post
+            'post': post,
+            'comentarios': comentarios,
+            'form': form,
         }
-    return render(request, 'post.html', context)
+        return render(request, 'post.html', context)
+
+    if request.method == 'POST' and request.user.is_authenticated:
+        user = request.user
+        post = Post.objects.get(id=id)
+        form = ComentarioForm(request.POST or None)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.usuario = user
+            form.post = post
+            form.save()
+            return redirect('post', id=id)
+    else:
+        form = ComentarioForm()
+    return render(request, 'post.html', {'form': form})
+
+
+    
+
+
+
+
 

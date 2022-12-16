@@ -16,9 +16,16 @@ class CategoriaAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre', 'activado', 'fecha_creacion')
     list_filter = ('activado',)
 
+class ComentarioAdmin(admin.ModelAdmin):
+    ordering = ('id', 'usuario', 'post', 'contenido')
+    search_fields = ('id', 'usuario', 'post', 'contenido')
+    list_display = ('id', 'usuario', 'post', 'fecha_creacion', 'contenido')
+    list_filter = ('usuario', 'post', 'fecha_creacion')
+
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
+admin.site.register(Comentario, ComentarioAdmin)
 
 
 
