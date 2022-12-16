@@ -61,7 +61,7 @@
           <!--INICIO Blog Posts-->
           <div class="blog-posts"> 
             <!--INICIO Blog Post-->
-            {% for post in posts %}
+            {% for post in posteos %}
               <div class="blog-post my-5 py-4">
                 <div class="blog-image rounded"><img src="media/{{post.imagen}}" alt="">
               </div>
@@ -89,24 +89,26 @@
 
         {% endblock post %}
 
-        <div class="col-md-4 ml-auto bg-light py-5">
-            <div class="sidebar-box pt-md-4 px-4 pb-5">
-              <form action="#" class="search-form">
-                <div class="form-group px-0">
-                  <span class="icon icon-search"></span>
-                  <input type="text" class="form-control" placeholder="Escribi una palabra y apreta enter">
-                </div>
-              </form>
-            </div>
+        <div class="sidebar-main col-md-4 ml-auto my-5 py-4 rounded">
             <div class="sidebar-box px-4 pb-5">
                 <h3 class="sidebar-heading mb-4 fw-bold">Categorias</h3>
-              <ul class="categories list-unstyled">
-                <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Animales</a></li>
-                <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Vegetacion</a></li>
-                <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Fungi</a></li>
-                <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Ambiente</a></li>
-                <li class="border-bottom pb-2 mb-2"><a class="text-muted" href="#">Fauna</a></li>
-              </ul>
+                <form action="#" method="POST">
+                  {% csrf_token %}
+                  <label for="solidSelect">Filtrar por categoria</label>
+                  <div class="categoria mb-3">
+                    <select class="form-control input-solid pl-1" name="categoria" id="solidSelect">
+                    {% for categoria in categorias %}
+                        <option>{{categoria.nombre}}</option>
+                    {% endfor %}
+                    </select>
+                  </div>
+                  <div class="fecha mb-3">
+                    <input type="date" name="fecha" placeholder="Fecha">
+                  </div>
+                  <div class="boton">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div> 
+              </form>
             </div>
 
 

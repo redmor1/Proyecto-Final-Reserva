@@ -109,3 +109,8 @@ blockquote > p > cite {
     width:100%;
     overflow:hidden;
 }
+
+.sidebar-main {
+    background-color:#f8f9faec
+
+}

@@ -4,16 +4,41 @@ from .forms import *
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.views.generic import View
 
 
 # Create your views here.
 
-def index(request):
-    posts = Post.objects.all().order_by('-fecha_creacion')
-    context = {
-        'posts': posts
-    }
-    return render(request, 'index.html', context)
+class MostrarPost(View):
+    template = 'index.html'
+
+    def get(self, request):
+        posteos = Post.objects.all()
+        categorias = Categoria.objects.all()
+        contexto = {
+            'posteos': posteos,
+            'categorias': categorias
+            }
+        return render(request, 'index.html', contexto)
+
+    def post(self, request):
+        posteos = Post.objects.all()
+        categorias = Categoria.objects.all()
+        cate = request.POST.get('categoria', None)
+        fecha = request.POST.get('fecha', None)
+        if cate and fecha:
+            posteos = Post.objects.filter(categoria__nombre=cate, fecha_creacion=fecha)
+        elif cate:
+            posteos = Post.objects.filter(categoria__nombre=cate)
+        elif fecha:
+            posteos = Post.objects.filter(fecha_creacion=fecha)
+
+        contexto = {
+            'posteos': posteos,
+            'categorias': categorias
+            }
+        return render(request, 'index.html', contexto)
+
 
 def quienes_somos(request):
     return render(request, 'quienes_somos.html')
@@ -72,3 +97,4 @@ def leer_post(request, id):
             'post': post
         }
     return render(request, 'post.html', context)
+
