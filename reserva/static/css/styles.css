@@ -24,7 +24,7 @@
     font-size: 1rem;
     line-height: 1.5;
     text-align: left;
-    font-weight: 400;
+    font-weight: 500;
     color: #555555;
     box-sizing: border-box;
     margin: 0 0 12px;
@@ -42,7 +42,7 @@ ul.post-meta li {
     display: inline-block;
     margin-right: 10px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     color: #888888;
 
 }
@@ -126,4 +126,70 @@ blockquote > p > cite {
     color:#00aced
 
 }
+
+.bg-light {
+    background-color: #f1f1f3!important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    color:#131313!important;
+    font-family: 'Roboto'!important;
+    background-color: #f1f1f3!important;
+
+}
+
+.bg-dark, .bg-primary {
+    background-color: #49bc74!important;
+}
+
+.btn-primary {
+    background-color:#49bc74!important;
+    border-color:#49bc74!important;
+
+}
+
+.sidebar-main {
+    background-color:#262c34!important;
+    color:#ffff!important;
+
+}
+
+.blog-image, .carousel-inner {
+    box-shadow:0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+
+}
+
+.post-meta {
+    color:#49bc74!important;
+
+}
+
+.blog-title {
+    color:#28252e!important;
+
+}
+
+.navbar {
+    font-family:Roboto;
+
+}
+
+ul.footer-text li a {
+
+    color:white!important;
+}
+
+.btn-info, .btn-outline-info {
+    background-color:#262c34!important;
+    border-color:#262c34!important;
+    color:white!important;
+
+}
+
+
+
+
+
+
 
