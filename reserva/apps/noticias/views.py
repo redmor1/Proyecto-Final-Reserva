@@ -14,7 +14,7 @@ class MostrarPost(View):
     template = 'index.html'
 
     def get(self, request):
-        posteos = Post.objects.all()
+        posteos = Post.objects.all().order_by('-fecha_creacion')
         categorias = Categoria.objects.all()
 
         page_number = request.GET.get('page', 1)
