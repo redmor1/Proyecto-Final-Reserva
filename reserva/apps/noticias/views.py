@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from django.contrib.auth.models import User
-
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -16,28 +16,18 @@ class MostrarPost(View):
     def get(self, request):
         posteos = Post.objects.all()
         categorias = Categoria.objects.all()
-        contexto = {
-            'posteos': posteos,
-            'categorias': categorias
-            }
-        return render(request, 'index.html', contexto)
 
-    def post(self, request):
-        posteos = Post.objects.all()
-        categorias = Categoria.objects.all()
-        cate = request.POST.get('categoria', None)
-        fecha = request.POST.get('fecha', None)
-        if cate and fecha:
-            posteos = Post.objects.filter(categoria__nombre=cate, fecha_creacion=fecha)
-        elif cate:
-            posteos = Post.objects.filter(categoria__nombre=cate)
-        elif fecha:
-            posteos = Post.objects.filter(fecha_creacion=fecha)
+        page_number = request.GET.get('page', 1)
+        paginator = Paginator(posteos, 3)
+        page_obj = paginator.page(page_number)
+        is_paginated = page_obj.paginator.num_pages > 1
 
+        
         contexto = {
-            'posteos': posteos,
-            'categorias': categorias
-            }
+            'posteos': page_obj,
+            'categorias': categorias,
+            'is_paginated': is_paginated,
+        }
         return render(request, 'index.html', contexto)
 
 
