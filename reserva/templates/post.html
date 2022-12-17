@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load social_share %}
 
 
 {% block post %}
@@ -25,14 +26,18 @@
               <p class="mt-4">{{ post.texto|safe }}</p>
               </div>
           </div>
-        <!--FIN Blog Post-->
-
-
+          <!--FIN Blog Post-->
+        <h2 class="d-flex justify-content-end">Compartir en redes sociales</h2>
+        <div class="d-flex justify-content-end mb-4 pb-3 border-bottom">
+          {% post_to_facebook object_or_url '<i class="fab fa-facebook fa-3x mr-2"></i>' %}
+          {% post_to_twitter 'Miren este post!' object_or_url '<i class="fab fa-twitter-square fa-3x mr-2"></i>' %}
+          {% post_to_whatsapp object_or_url '<i class="fab fa-whatsapp-square fa-3x mr-2"></i>' %}
+        </div>
       </div>
       <!--FIN Blog Posts--> 
 
       <div class="post-comments">
-        <h2 class="mb-3">Comentarios</h2>
+        <h2 class="mb-4">Comentarios</h2>
         
         <li class="comment list-unstyled border-top pr-5 pl-2 py-2">
             <!-- <div class="vcard bio">

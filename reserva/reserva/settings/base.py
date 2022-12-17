@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.usuarios',
     'crispy_forms',
     'ckeditor',
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-ar'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -142,6 +143,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'aim191395@gmail.com'
-EMAIL_HOST_PASSWORD = '12345'
+EMAIL_HOST_PASSWORD = 'ihhuzvtixjgowixv'
 # en caso de prueba, agregar su propio gmail y conseguir
 # la api password
