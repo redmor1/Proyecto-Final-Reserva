@@ -134,7 +134,7 @@ blockquote > p > cite {
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     color:#131313!important;
-    font-family: 'Roboto'!important;
+    font-family: 'Roboto', 'sans_serif',!important;
     background-color: #f1f1f3!important;
 
 }
@@ -143,9 +143,10 @@ body {
     background-color: #49bc74!important;
 }
 
-.btn-primary {
+.btn-primary, .btn {
     background-color:#49bc74!important;
     border-color:#49bc74!important;
+    color:white;
 
 }
 
@@ -187,9 +188,18 @@ ul.footer-text li a {
 
 }
 
+.categoria-texto {
+    color:#ffff!important;
+    
+}
 
+.carousel-inner {
 
+    height:20rem;
+}
 
-
-
-
+.carousel-item img {
+    object-fit: contain;
+    height: 5rem;
+    object-position: bottom!important;
+}
