@@ -6,7 +6,7 @@
     font-size: 20px;
     width: 44px;
     height: 44px;
-    background-color:green;
+    background-color:#262c34;
 
 }
 
@@ -74,10 +74,10 @@ blockquote:after {
     height: 100%;
     position: absolute;
     left: 0;
-    color: #66cc66;
+    color: #239c50;
     top: 0;
-    background: -moz-linear-gradient(top,#66cc66 0%,#66cc66 60%,rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top,#66cc66 0%,#66cc66 60%,rgba(255,255,255,0) 100%);
+    background: -moz-linear-gradient(top,#239c50 0%,#239c50 60%,rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top,#239c50 0%,#239c50 60%,rgba(255,255,255,0) 100%);
     /* background: linear-gradient(to bottom,#66cc66 0%,#66cc66 60%,rgba(255,255,255,0) 100%); */
 }
 
@@ -88,7 +88,7 @@ blockquote:before {
     display: block;
     margin-bottom: 0.8em;
     font-weight: 400;
-    color: #66cc66;
+    color: #239c50;
 }
 
 blockquote > cite, 
@@ -140,12 +140,12 @@ body {
 }
 
 .bg-dark, .bg-primary {
-    background-color: #49bc74!important;
+    background-color: #239c50!important;
 }
 
 .btn-primary, .btn {
-    background-color:#49bc74!important;
-    border-color:#49bc74!important;
+    background-color:#239c50!important;
+    border-color:#239c50!important;
     color:white;
 
 }
@@ -156,13 +156,13 @@ body {
 
 }
 
-.blog-image, .carousel-inner {
+.blog-image, .carousel-inner, .sidebar-main {
     box-shadow:0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 
 }
 
 .post-meta {
-    color:#49bc74!important;
+    color:#239c50!important;
 
 }
 
@@ -202,4 +202,10 @@ ul.footer-text li a {
     object-fit: contain;
     height: 5rem;
     object-position: bottom!important;
+}
+
+
+.post-summary {
+    font-size:16px;
+
 }

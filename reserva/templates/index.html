@@ -7,7 +7,13 @@
 
 <section class="blog bg-light">
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+ 
+
+  
+  
+    <div class="container">
+    {% block post %}
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -34,19 +40,17 @@
     </a>
   </div>
 
-  
-  
-    <div class="container">
-    {% block post %}
-
-
       <div class="row">
-        <div class="col-md-6 ml-auto"> 
+        <div class="col-lg-7 col-md-6 ml-auto">
+          <div class="col-md-3 p-0 mt-5 mb-0 d-flex">
+            <i class="fas fa-newspaper fa-3x d-flex mr-2"></i>
+            <h1 class="fw-bold my-auto">NOTICIAS</h1> 
+          </div>
           <!--INICIO Blog Posts-->
           <div class="blog-posts"> 
             <!--INICIO Blog Post-->
             {% for post in posteos %}
-              <div class="blog-post my-5 py-4">
+              <div class="blog-post mb-5 py-4">
                 <div class="blog-image rounded"><img src="media/{{post.imagen}}" alt="">
               </div>
               <div class="blog-text">
@@ -59,7 +63,7 @@
                     <!-- <li class="mr-3 post-meta"> <i class="fas fa-comments"></i> 10 Comentarios </li> -->
                     <li class="post-tags post-meta"><i class="fas fa-tags"></i> {{ post.categoria }}</li>
                   </ul>
-                  <p>{{ post.resumen }}</p>
+                  <p class="post-summary">{{ post.resumen }}</p>
                   <a href="{% url 'post' post.id %}" class="btn bg-primary text-white mt-2">Ver mas</a> </div>
               </div>
             {% endfor %}
