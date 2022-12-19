@@ -36,6 +36,7 @@ urlpatterns = [
     path('usuarios/registro/', registro, name='registro'),
     path('publicaciones/', publicaciones, name='publicaciones'),
     re_path('leer_post/(?P<id>\d+)/$', leer_post, name='post'),
+    path('servicios/', servicios, name='servicios'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
