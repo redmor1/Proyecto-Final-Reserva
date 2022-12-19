@@ -214,3 +214,52 @@ ul.footer-text li a {
     font-size:17px;
 
  }
+
+ .imagen-fondo {
+
+    background-image:url(servicios1.jpg);
+    background-position: center;
+    background-size: cover;
+
+ }
+
+ .imagen-texto, .titulo {
+    text-shadow: 2px 2px 4px #020202;
+    text-rendering: optimizeLegibility;
+
+ }
+
+ .imagen-fondo-2 {
+    background-image:url(servicios2.jpg);
+    background-position: center;
+    background-size: cover;
+
+ }
+
+ .imagen-fondo-3 {
+    background-image:url(servicios3.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-position: 0px 600px;
+
+ }
+
+ .imagen-fondo-4 {
+    background-image:url(servicios4.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-position: 0px 550px;
+
+ }
+
+
+ .imagen-texto {
+
+    font-size:20px;
+ }
+
+
+.hashtag {
+    color:#ffd204!important;
+
+}
