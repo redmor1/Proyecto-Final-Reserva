@@ -29,7 +29,7 @@ class Post(models.Model):
     resumen = models.TextField(max_length=350, blank=False, null=False)
     texto = RichTextField(blank=False, null=False)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    fecha_creacion = models.DateField(auto_now_add=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
     comentarios_activados = models.BooleanField(default=True)
 
     class Meta:
