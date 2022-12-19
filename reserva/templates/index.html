@@ -79,23 +79,24 @@
         <div class="sidebar-main col-md-4 ml-auto my-5 py-4 rounded">
             <div class="sidebar-box px-4 pb-5 pt-3 border-bottom mb-5">
                 <h3 class="sidebar-heading mb-4 fw-bold">Categorias</h3>
-                <form action="#" method="POST">
-                  {% csrf_token %}
-                  <label class="categoria-texto" for="solidSelect">Filtrar por categoria</label>
-                  <div class="categoria mb-3">
-                    <select class="form-control input-solid pl-1" name="categoria" id="solidSelect">
-                    {% for categoria in categorias %}
-                        <option>{{categoria.nombre}}</option>
-                    {% endfor %}
-                    </select>
-                  </div>
-                  <div class="fecha mb-3">
-                    <input type="date" name="fecha" placeholder="Fecha">
-                  </div>
-                  <div class="boton">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                  </div> 
-              </form>
+              <form action="#" method="POST">
+                {% csrf_token %}
+                <label class="categoria-texto" for="solidSelect">Filtrar por categoria</label>
+                <div class="categoria mb-3">
+                  <select class="form-control input-solid pl-1" name="categoria" id="solidSelect">
+                      <option value="">Selecciona una categoria</option>
+                  {% for categoria in categorias %}
+                      <option>{{categoria.nombre}}</option>
+                  {% endfor %}
+                  </select>
+                </div>
+                <div class="fecha mb-3">
+                  <input type="date" name="fecha" placeholder="Fecha">
+                </div>
+                <div class="boton">
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div> 
+            </form>
             </div>
 
 
