@@ -1,6 +1,52 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="imagen container-fluid d-flex align-items-center">
+            <div class="col-lg-8 p-5 mx-auto">
+                <h1 class="titulo text-white display-3 fw-bold">Areas de estudio</h1>
+                <p class="imagen-texto text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni, ab, dolor non blanditiis cupiditate perferendis ipsum labore odit sequi iure suscipit necessitatibus beatae perspiciatis.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="col-lg-10 col-md-10 my-5 d-flex mx-auto">
+            <div class="col-lg-6 d-flex align-items-center">
+                <img src="{% static 'img/carrusel2.jpg' %}" class="img-fluid rounded w-100" style="object-fit: contain;">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold text-center">Fauna</h1>
+                <p class="areas-texto text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore mollitia molestias sint dignissimos distinctio vel totam maiores cumque deleniti tempora, quisquam aliquam non, consequuntur dolorum deserunt quos commodi est! Nemo ipsam sed beatae sunt mollitia iure officiis culpa possimus accusamus doloremque, pariatur accusantium rem delectus commodi architecto nisi sequi unde.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-md-10 my-5 d-flex mx-auto">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold text-center">Flora</h1>
+                <p class="areas-texto text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore mollitia molestias sint dignissimos distinctio vel totam maiores cumque deleniti tempora, quisquam aliquam non, consequuntur dolorum deserunt quos commodi est! Nemo ipsam sed beatae sunt mollitia iure officiis culpa possimus accusamus doloremque, pariatur accusantium rem delectus commodi architecto nisi sequi unde.</p>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+                <img src="{% static 'img/carrusel1.jpg' %}" class="img-fluid rounded w-100" style="object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-md-10 my-5 d-flex mx-auto">
+            <div class="col-lg-6 d-flex align-items-center">
+                <img src="{% static 'img/fungi.jpg' %}" class="img-fluid rounded w-100" style="object-fit: contain;">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold text-center">Fungi</h1>
+                <p class="areas-texto text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore mollitia molestias sint dignissimos distinctio vel totam maiores cumque deleniti tempora, quisquam aliquam non, consequuntur dolorum deserunt quos commodi est! Nemo ipsam sed beatae sunt mollitia iure officiis culpa possimus accusamus doloremque, pariatur accusantium rem delectus commodi architecto nisi sequi unde.</p>
+            </div>
+        </div>
+
+
+
+</div>
+
+
 
 {% endblock %}

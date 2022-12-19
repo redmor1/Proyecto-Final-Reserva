@@ -263,3 +263,16 @@ ul.footer-text li a {
     color:#ffd204!important;
 
 }
+
+.imagen {
+    background-image:url(areas_de_estudio.jpg);
+    background-size:cover;
+    overflow:hidden;
+    height:30rem;
+
+}
+
+.areas-texto {
+    font-size:16px;
+
+}
