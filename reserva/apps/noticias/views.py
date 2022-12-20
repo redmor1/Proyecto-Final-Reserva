@@ -36,11 +36,11 @@ class MostrarPost(View):
         cate = request.POST.get('categoria', None)
         fecha = request.POST.get('fecha', None)
         if cate and fecha:
-            posteos = Post.objects.filter(categoria__nombre=cate, fecha_creacion=fecha)
+            posteos = Post.objects.filter(categoria__nombre=cate, fecha_creacion=fecha).order_by('-fecha_creacion')
         elif cate:
-            posteos = Post.objects.filter(categoria__nombre=cate)
+            posteos = Post.objects.filter(categoria__nombre=cate).order_by('-fecha_creacion')
         elif fecha:
-            posteos = Post.objects.filter(fecha_creacion=fecha)
+            posteos = Post.objects.filter(fecha_creacion=fecha).order_by('-fecha_creacion')
 
         contexto = {
             'posteos': posteos,
