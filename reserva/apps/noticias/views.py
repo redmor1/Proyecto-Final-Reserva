@@ -8,13 +8,16 @@ from django.views.generic import View
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
+
+
+
 # Create your views here.
 
 class MostrarPost(View):
     template = 'index.html'
 
     def get(self, request):
-        posteos = Post.objects.all().order_by('-fecha_creacion')
+        posteos = Post.objects.all().order_by('-id')
         categorias = Categoria.objects.all()
 
         page_number = request.GET.get('page', 1)
@@ -31,16 +34,17 @@ class MostrarPost(View):
         return render(request, 'index.html', contexto)
 
     def post(self, request):
-        posteos = Post.objects.all()
+        posteos = Post.objects.all().order_by('-id')
         categorias = Categoria.objects.all()
         cate = request.POST.get('categoria', None)
         fecha = request.POST.get('fecha', None)
+        print(fecha)
         if cate and fecha:
-            posteos = Post.objects.filter(categoria__nombre=cate, fecha_creacion=fecha).order_by('-fecha_creacion')
+            posteos = Post.objects.filter(categoria__nombre=cate, fecha_creacion=fecha).order_by('-id')
         elif cate:
-            posteos = Post.objects.filter(categoria__nombre=cate).order_by('-fecha_creacion')
+            posteos = Post.objects.filter(categoria__nombre=cate).order_by('-id')
         elif fecha:
-            posteos = Post.objects.filter(fecha_creacion=fecha).order_by('-fecha_creacion')
+            posteos = Post.objects.filter(fecha_creacion=fecha).order_by('-id')
 
         contexto = {
             'posteos': posteos,
